@@ -2,6 +2,7 @@ export const COLORS = {
     PRIMERY_BACKGROUND: "#f8f8f8ff",
     SECONDERY_BACKGROUD: "#f70000ff",
     PRIMERY_TEXT: "#000000ff",
+    SECONDARY_TEXT: "#ffffffff",
     PRIMERY_BUTTON: "#009A90",
     SECONDERY_BUTTON: "#FFFFFF"
 }
