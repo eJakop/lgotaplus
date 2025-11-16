@@ -21,12 +21,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: COLORS.PRIMERY_BACKGROUND,
+    backgroundColor: COLORS.MAIN_COLOR,
     marginTop: 100
   },
   image: {
-    width: 250,
-    height: 250,
+    width: 150,
+    height: 150,
     resizeMode:'contain'
   },
 });

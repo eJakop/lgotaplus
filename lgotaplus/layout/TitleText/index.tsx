@@ -28,7 +28,7 @@ const ResponsiveText:React.FC<TouchableButtonProps> = ({
         <Text style={[styles.text, { fontSize: getResponsiveFontSize() }]}>
            
             <Text style={[styles.text, textStyle]}>
-                      {title}
+                {title}       
             </Text>
         </Text>
         </View>

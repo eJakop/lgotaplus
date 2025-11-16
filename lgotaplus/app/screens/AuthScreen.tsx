@@ -1,39 +1,45 @@
 
-
 import { COLORS } from "@/constatns/ui";
 import Logo from "@/layout/Logo";
 import TitleText from "@/layout/TitleText";
 import TouchableButton from "@/layout/TouchableButton";
+import { useNavigation } from '@react-navigation/native';
 import { Alert, StyleSheet, View } from "react-native";
 
-  const handlePress = (message: string): void => {
-    Alert.alert('Кнопка нажата', message);
-  };
+const handlePress = (message: string): void => {
+  Alert.alert('Кнопка нажата', message);
+};
 
 
 export default function AuthScreen() {
+
+  const navigation = useNavigation();
+    const handleRegister = () => {
+    navigation.navigate('RegisterScreen' as never);
+  };
+
   return (
     <View style={styles.container}>
       {/*<StatusBar barStyle={"dark-content"}/>*/}
       <Logo/>
       <TitleText 
-        title="
-        ВАШ ПЕРСОНАЛЬНЫЙ ПОМОШНИК
-        В МИРЕ ЛЬГОТ"
+        title="ВАШ ПЕРСОНАЛЬНЫЙ ПОМОШНИК
+В МИРЕ ЛЬГОТ"
         style={styles.Title}
         textStyle={styles.TitleText}
       />
       <TouchableButton 
       title="Вход"
-      onPress={() => handlePress('Основная кнопка')}
+       onPress={() => handlePress('Основная кнопка')}
       style={styles.LoginButton}
       textStyle={styles.LoginTitle}
       />
       <TouchableButton 
       title="Регистрация"
-      onPress={() => handlePress('Основная кнопка')}
-      style={styles.AuthButton}
-      textStyle={styles.AuthTitle}
+
+      onPress={handleRegister}
+      style={styles.RegisterButton}
+      textStyle={styles.RegisterTitle}
       />
     </View>
   );
@@ -42,8 +48,7 @@ export default function AuthScreen() {
 const styles = StyleSheet.create({
   container:{
     flex: 1,
-    color: COLORS.PRIMERY_BACKGROUND,
-    backgroundColor: COLORS.PRIMERY_BACKGROUND
+    backgroundColor: COLORS.MAIN_COLOR
   },
   Title:{
     marginBottom:150,
@@ -51,35 +56,38 @@ const styles = StyleSheet.create({
   TitleText: {
     fontSize: 14,
     textAlign: 'center',
-    color:  COLORS.PRIMERY_TEXT
+    color:  COLORS.SECONDARY_TEXT,
+    fontFamily: 'Bahnschrift',
+    fontWeight: 'regular',
   },
   LoginTitle: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: 'regular',
     textAlign: 'center',
-    color:  COLORS.SECONDARY_TEXT,
+    color:  COLORS.MAIN_COLOR,
+    fontFamily: 'Bahnschrift'
   },
-  AuthTitle: {
+  RegisterTitle: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: 'regular',
     textAlign: 'center',
-    color: COLORS.PRIMERY_TEXT
+    color: COLORS.SECONDARY_TEXT
   },
   LoginButton: {
-    backgroundColor: COLORS.PRIMERY_BUTTON,
+    backgroundColor: COLORS.PRIMERY_BACKGROUND,
     borderRadius: 20,
     alignSelf:'center',
-    width:'50%'
+    width:'75%'
   },
-  AuthButton: {
-    backgroundColor: COLORS.SECONDERY_BUTTON,
-    borderColor: COLORS.PRIMERY_BUTTON,
+  RegisterButton: {
+    backgroundColor: COLORS.MAIN_COLOR,
+    borderColor: COLORS.PRIMERY_BACKGROUND,
     borderRadius: 20,
     alignSelf:'center',
-    width:'50%',
+    width:'75%',
     borderWidth: 2,
     marginTop:30,
     marginBottom:200,
-    color: COLORS.SECONDERY_BUTTON
+    color: COLORS.SECONDERY_BUTTON,
   },
 })

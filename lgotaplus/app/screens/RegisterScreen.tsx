@@ -1,9 +1,6 @@
 
 
 import { COLORS } from "@/constatns/ui";
-import Logo from "@/layout/Logo";
-import TitleText from "@/layout/TitleText";
-import TouchableButton from "@/layout/TouchableButton";
 import { Alert, StyleSheet, View } from "react-native";
 
   const handlePress = (message: string): void => {
@@ -14,27 +11,7 @@ import { Alert, StyleSheet, View } from "react-native";
 export default function RegisterScreen() {
   return (
     <View style={styles.container}>
-      {/*<StatusBar barStyle={"dark-content"}/>*/}
-      <Logo/>
-      <TitleText 
-        title="
-        ВАШ ПЕРСОНАЛЬНЫЙ ПОМОШНИК
-        В МИРЕ ЛЬГОТ"
-        style={styles.Title}
-        textStyle={styles.TitleText}
-      />
-      <TouchableButton 
-      title="Вход"
-      onPress={() => handlePress('Основная кнопка')}
-      style={styles.LoginButton}
-      textStyle={styles.LoginTitle}
-      />
-      <TouchableButton 
-      title="Регистрация"
-      onPress={() => handlePress('Основная кнопка')}
-      style={styles.AuthButton}
-      textStyle={styles.AuthTitle}
-      />
+      
     </View>
   );
 }
